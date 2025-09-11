@@ -20,12 +20,33 @@ total_marks = sum(marks_dict.values())
 average_marks = total_marks / len(marks_dict) if marks_dict else 0
 result = "Pass" if average_marks >= 40 else "Fail"
 
+
 # Output
 print("\n--- Student Information ---")
 print("Name:", name)
 print("Age:", age)
 print("Subjects:", subjects_list)
-print("Number of subjects:",len(subjects_list))
+print("Number of subjects:", len(subjects_list))
 print("Total Marks:", total_marks)
 print("Average Marks:", average_marks)
 print("Result:", result)
+
+print("\n--- Marks Subject-wise with Grade ---")
+for subject, marks in marks_dict.items():
+    if marks >= 90:
+        grade = 'A+'
+    elif marks >= 80:
+        grade = 'A'
+    elif marks >= 70:
+        grade = 'B+'
+    elif marks >= 60:
+        grade = 'B'
+    elif marks >= 50:
+        grade = 'C'
+    elif marks >= 40:
+        grade = 'D'
+    else:
+        grade = 'F'
+
+    # अब यहीं print करो
+    print(f"{subject}: {marks} → Grade: {grade}")
